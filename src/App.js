@@ -304,12 +304,12 @@ const SettingsPage = ({ onBack, settings, onSettingsChange, expenses, userId }) 
                         ))}
                     </select>
                 </div>
-                {['Account Settings', 'Help', 'Feedback'].map(item => (
+                {/* {['Account Settings'].map(item => (
                     <div key={item} className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
                         <span className="font-semibold">{item}</span>
                         <span className="text-gray-400">&gt;</span>
                     </div>
-                ))}
+                ))} */}
             </div>
              <footer className="text-center mt-6 text-sm text-gray-400 dark:text-gray-500">
                 <p>User ID: <span className="font-mono bg-gray-200 dark:bg-gray-700 rounded px-2 py-1">{userId || '...'}</span></p>
@@ -433,7 +433,7 @@ const PocketPulseApp = ({ user, auth, db }) => {
         words[words.length - 1] = tag;
         setUserInput(words.join(' ') + ' ');
         setTagSuggestions([]);
-        document.querySelector('input[placeholder="Type your expense or a comment..."]').focus();
+        document.querySelector('input[placeholder="Type your expense or a comment...Eg -300 food / -500 car / 5000 salary"]').focus();
     };
 
     const handleUserInput = async (textInput = userInput) => {
@@ -639,7 +639,7 @@ const PocketPulseApp = ({ user, auth, db }) => {
                                     value={userInput}
                                     onChange={(e) => handleUserInputTextChange(e.target.value)}
                                     onKeyPress={(e) => e.key === 'Enter' && handleUserInput()}
-                                    placeholder="Type your expense or a comment..."
+                                    placeholder="Type your expense or a comment...#Eg -300 food / -500 car / 5000 salary"
                                     className="w-full p-2 bg-transparent focus:outline-none text-lg"
                                 />
                                 <button onClick={() => handleUserInput()} className="bg-blue-500 text-white rounded-lg p-3 hover:bg-blue-600 transition-colors">
