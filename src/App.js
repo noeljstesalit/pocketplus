@@ -20,7 +20,6 @@ const appId =
     ? window.__app_id
     : 'default-expense-tracker';
 
-
 const currencies = [
   { code: 'USD', name: 'United States Dollar' }, { code: 'EUR', name: 'Euro' }, { code: 'JPY', name: 'Japanese Yen' },
   { code: 'GBP', name: 'British Pound Sterling' }, { code: 'INR', name: 'Indian Rupee' }, { code: 'AUD', name: 'Australian Dollar' },
